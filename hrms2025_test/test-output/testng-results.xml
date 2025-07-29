@@ -1,28 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-29T15:07:51 JST" name="sample_suite" finished-at="2025-07-29T15:08:02 JST" duration-ms="10532">
+  <suite started-at="2025-07-29T17:08:40 JST" name="sample_suite" finished-at="2025-07-29T17:09:09 JST" duration-ms="28738">
     <groups>
       <group name="scenario">
         <method signature="ArigaTest.scenarioTest001()[pri:0, instance:scenario.ArigaTest@72967906]" name="scenarioTest001" class="scenario.ArigaTest"/>
       </group> <!-- scenario -->
     </groups>
-    <test started-at="2025-07-29T15:07:51 JST" name="sample_test" finished-at="2025-07-29T15:08:02 JST" duration-ms="10532">
+    <test started-at="2025-07-29T17:08:40 JST" name="sample_test" finished-at="2025-07-29T17:09:09 JST" duration-ms="28738">
       <class name="scenario.ArigaTest">
-        <test-method is-config="true" signature="before()[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T15:07:52 JST" name="before" finished-at="2025-07-29T15:07:55 JST" duration-ms="3755" status="PASS">
+        <test-method is-config="true" signature="before()[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T17:08:40 JST" name="before" finished-at="2025-07-29T17:08:44 JST" duration-ms="4127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method signature="scenarioTest001()[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T15:07:55 JST" name="scenarioTest001" finished-at="2025-07-29T15:08:02 JST" duration-ms="6424" status="PASS">
+        <test-method signature="scenarioTest001()[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T17:08:44 JST" name="scenarioTest001" finished-at="2025-07-29T17:09:08 JST" duration-ms="24080" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0"]/li[3]/button (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\JTUL8XU2\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57922}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57922/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 55772f1e569fc39061555ebc9c32e165]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0"]/li[3]/button (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\JTUL8XU2\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57922}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57922/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 55772f1e569fc39061555ebc9c32e165
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at scenario.TestBase.inputEmployeeInfo(TestBase.java:125)
+at scenario.ArigaTest.scenarioTest001(ArigaTest.java:63)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenarioTest001 -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T15:08:02 JST" name="after" finished-at="2025-07-29T15:08:02 JST" duration-ms="296" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.ArigaTest@72967906]" started-at="2025-07-29T17:09:08 JST" name="after" finished-at="2025-07-29T17:09:09 JST" duration-ms="462" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=scenarioTest001 status=SUCCESS method=ArigaTest.scenarioTest001()[pri:0, instance:scenario.ArigaTest@72967906] output={null}]]]>
+                <![CDATA[[TestResult name=scenarioTest001 status=FAILURE method=ArigaTest.scenarioTest001()[pri:0, instance:scenario.ArigaTest@72967906] output={null}]]]>
               </value>
             </param>
           </params>

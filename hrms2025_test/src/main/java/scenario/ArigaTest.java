@@ -101,45 +101,6 @@ public class ArigaTest extends TestBase {
 	  System.out.println("ログアウト");
 	  click("//*[@id=\"menu\"]/ul/form[2]/button");
 	  //5.ログアウト
-			
-		// ログイン画面に遷移することを確認
-	//1.ログイン
-      
-      // ホーム画面が開く
-//      assertPageTitle("ホーム");
-//
-//      //2.必須項目情報のみで社員登録
-//      // 新規登録ボタンを押す
-//      click("//*[text()='従業員情報検索']");
-//      // ページ確認
-//      assertPageTitle("従業員情報検索");
-//
-//      // 新規登録画面を開く
-//      click("//*[text()='新規登録']");
-//      // ページ確認
-//      assertPageTitle("従業員情報登録");
-//      
-//      //社員情報入力
-//      final String employeeNum = "0001";
-//      final String mailaddress = "Purota.NIHON@jpd.co.jp";
-//      inputEmployeeInfo(employeeNum, mailaddress);
-//      // 登録
-//      click("//*[@id=\"upload\"]");
-//      //メッセージバー確認
-//      assertMessageBar("従業員情報の登録が完了しました。");
-//      assertPageTitleDisplayedMessageBar("従業員情報詳細");
-//
-//      //3.登録した社員を削除
-//      click("/html/body/div[2]/div[1]/button");
-//      assertText("/html/body/div[2]/div[2]/div[1]/p[1]", "以下の従業員情報を削除してもよろしいでしょうか");
-//      assertText("/html/body/div[2]/div[2]/div[1]/p[2]", "・" + "日本プロ太");
-//      click("//*[@id=\"modalExecute\"]");
-//      //メッセージバー確認
-//      assertMessageBar("従業員情報の削除が完了しました。");
-//      assertPageTitle("従業員情報検索");
-//
-//      //4.ログアウト
-//      click("/html/body/header/nav/div/ul/li[4]/a");
-//      click("//*[@id=\"glovalNaviLoginDropMenu2\"]/li[2]/form");
+	// ログイン画面に遷移することを確認
 	}
 }

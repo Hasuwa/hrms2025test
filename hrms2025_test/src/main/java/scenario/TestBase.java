@@ -67,18 +67,15 @@ public class TestBase {
 		assertEquals(driver.findElement(By.xpath(xpath)).getText(), text);
 	}
 
-		public void testDirectDateInput(String xpath, String text) {
-				// 日付入力フィールドを取得（IDやnameなどは実際のHTMLに合わせて変更）
-				WebElement dateInput = driver.findElement(By.xpath(xpath));
-				// 直接日付を入力（フォーマットは input の仕様に合わせる）
-
-				((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1];", dateInput, text);
-
-
-				// 必要に応じて、送信ボタンをクリックしたり、値の検証を行う
-				// WebElement submitButton = driver.findElement(By.id("submit"));
-				// submitButton.click();
-		}
+	public void testDirectDateInput(String xpath, String text) {
+		// 日付入力フィールドを取得（IDやnameなどは実際のHTMLに合わせて変更）
+		WebElement dateInput = driver.findElement(By.xpath(xpath));
+		// 直接日付を入力（フォーマットは input の仕様に合わせる）
+		((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1];", dateInput, text);
+		// 必要に応じて、送信ボタンをクリックしたり、値の検証を行う
+		// WebElement submitButton = driver.findElement(By.id("submit"));
+		// submitButton.click();
+	}
 
 
 	/**
@@ -114,32 +111,17 @@ public class TestBase {
 		click("//*[@id=\"gender1\"]");
 		//input 入社日
 		testDirectDateInput("//*[@id=\"hireDate\"]","2025-01-01");
+		//input 退職日
+		testDirectDateInput("//*[@id=\"quitDate\"]","2028-01-01");
 		//input 生年月日
 		testDirectDateInput("//*[@id=\"birthDate\"]","2000-01-01");
 		// select rank
 		click("//*[@id=\"employeeRank\"]");
 		click("//*[@id=\"employeeRank\"]/div[1]/option");
-		// select group
-//		click("/html/body/div[2]/form/table/tbody/tr[9]/td/button");
-//		System.out.println("ここまで");
-//
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//
-//		// モーダルが表示されるまで待機
-////		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"organizationModal\"]")));
-//		
-//
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button")));
-//		
-//		driver.findElement(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button")).click();
-//		
-
+		// select group	
 		WebElement button = driver.findElement(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
-
-		
 		// dialog
-
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button")));
 		click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0\"]/li[3]/button")));
