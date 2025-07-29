@@ -16,7 +16,7 @@ public class TestBase {
 	WebDriverWait wait;
 
 	// アプリのパス
-	static final String SHINABLE_CLOUD_PATH = "https://shinable.azurewebsites.net/login";
+	static final String SHINABLE_CLOUD_PATH = "http://localhost:8081/hrms2025/login";
 
 	/**
 	 * 入力

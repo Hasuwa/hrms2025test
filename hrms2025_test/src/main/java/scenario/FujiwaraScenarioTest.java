@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import utility.CommonUtil;
 
-public class ScenarioTest extends TestBase {
+public class FujiwaraScenarioTest extends TestBase {
 
 	/**
 	 * Chromeでアプリを開く
