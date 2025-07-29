@@ -127,7 +127,7 @@ public class TestBase {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0\"]/li[3]/button")));
 		click("//*[@id=\"38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0\"]/li[3]/button");
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"11068ebb-2443-48a6-84fb-4d9796288f96\"]/li")));  
-		click("//*[@id=\"11068ebb-2443-48a6-84fb-4d9796288f96\"]/li/span");
+		click("//*[@id=\"9f985fbd-b8ea-43da-aa00-5d08ed56554f\"]/li/span");
 		
 		//入力出来ていない時があったのでリトライを入れる
 //		if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null)) {
