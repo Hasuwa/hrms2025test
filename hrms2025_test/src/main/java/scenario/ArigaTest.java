@@ -84,6 +84,7 @@ public class ArigaTest extends TestBase {
 	  //3.登録した社員を削除
 	  //3-1　削除ボタン押下
 	  click("/html/body/div[2]/div[1]/div/button");
+	  
 	  // 削除確認ダイアログが表示されることを確認
 	  click("//*[@id=\"deleteModal\"]/div/div/div[3]/form/button[1]");
 	  // 確認メッセージが正しいことを確認
