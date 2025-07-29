@@ -1,11 +1,11 @@
 package scenario;
 
 import static org.testng.Assert.*;
-
 import java.time.Duration;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +16,7 @@ public class TestBase {
 	WebDriverWait wait;
 
 	// アプリのパス
-	static final String SHINABLE_CLOUD_PATH = "https://shinable.azurewebsites.net/login";
+	static final String SHINABLE_CLOUD_PATH = "http://localhost:8081/hrms2025/login";
 
 	/**
 	 * 入力
@@ -67,19 +67,33 @@ public class TestBase {
 		assertEquals(driver.findElement(By.xpath(xpath)).getText(), text);
 	}
 
+		public void testDirectDateInput(String xpath, String text) {
+				// 日付入力フィールドを取得（IDやnameなどは実際のHTMLに合わせて変更）
+				WebElement dateInput = driver.findElement(By.xpath(xpath));
+				// 直接日付を入力（フォーマットは input の仕様に合わせる）
+
+				((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1];", dateInput, text);
+
+
+				// 必要に応じて、送信ボタンをクリックしたり、値の検証を行う
+				// WebElement submitButton = driver.findElement(By.id("submit"));
+				// submitButton.click();
+		}
+
+
 	/**
 	 * ログイン
-	 * @param mailAddress
-	 * @param password
+	 * @param usernameInput
+	 * @param passwordInput
 	 */
-	public void login(String mailAddress, String password) {
-		final String MAILADDRESS_INPUT_XPATH = "//*[@id=\"mailAddress\"]";
-		final String PASSWORD_INPUT_XPATH = "//*[@id=\"password\"]";
-		final String LOGIN_BUTTON_XPATH = "//button[text()='ログイン']";
+	public void login(String usernameInput, String passwordInput) {
+		final String MAILADDRESS_INPUT_XPATH = "//*[@id=\"usernameInput\"]";
+		final String PASSWORD_INPUT_XPATH = "//*[@id=\"passwordInput\"]";
+		final String LOGIN_BUTTON_XPATH = "/html/body/div[2]/div/form/div[3]/input";
 		// input mailaddress
-		input(MAILADDRESS_INPUT_XPATH, mailAddress);
+		input(MAILADDRESS_INPUT_XPATH, usernameInput);
 		// input password
-		input(PASSWORD_INPUT_XPATH, password);
+		input(PASSWORD_INPUT_XPATH, passwordInput);
 		// click login button
 		click(LOGIN_BUTTON_XPATH);
 	}
@@ -89,31 +103,61 @@ public class TestBase {
 	 * @param employeeNum
 	 * @param mailaddress
 	 */
-	public void inputEmployeeInfo(String employeeNum, String mailaddress) {
+	public void inputEmployeeInfo(String employeeNo, String mailAddress) {
 		// input employee num
-		input("//*[@id=\"number\"]", employeeNum);
+		input("//*[@id=\"employeeNo\"]", employeeNo);
 		// input name
-		input("//*[@id=\"fullName\"]", "日本プロ太");
+		input("//*[@id=\"fullName\"]", "テスト太郎");
 		// input mailaddress
-		input("//*[@id=\"mailAddress\"]", mailaddress);
+		input("//*[@id=\"mailAddress\"]", mailAddress);
+		//select 性別
+		click("//*[@id=\"gender1\"]");
+		//input 入社日
+		testDirectDateInput("//*[@id=\"hireDate\"]","2025-01-01");
+		//input 生年月日
+		testDirectDateInput("//*[@id=\"birthDate\"]","2000-01-01");
 		// select rank
-		click("/html/body/div[2]/div/form/div[8]/div/div/input");
-		click("//*[@class=\"dropdown-content select-dropdown\"]/li[2]");
+		click("//*[@id=\"employeeRank\"]");
+		click("//*[@id=\"employeeRank\"]/div[1]/option");
 		// select group
-		click("//*[@id=\"open\"]");
+//		click("/html/body/div[2]/form/table/tbody/tr[9]/td/button");
+//		System.out.println("ここまで");
+//
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//
+//		// モーダルが表示されるまで待機
+////		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"organizationModal\"]")));
+//		
+//
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button")));
+//		
+//		driver.findElement(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button")).click();
+//		
+
+		WebElement button = driver.findElement(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+
+		
 		// dialog
-		click("//*[@id=\"node0\"]");
-		click("//*[@id=\"select\"]");
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button")));
+		click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0\"]/li[3]/button")));
+		click("//*[@id=\"38b3cfbb-07c2-4eb9-af49-6be4bec9d5b0\"]/li[3]/button");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"11068ebb-2443-48a6-84fb-4d9796288f96\"]/li")));  
+		click("//*[@id=\"11068ebb-2443-48a6-84fb-4d9796288f96\"]/li/span");
+		
 		//入力出来ていない時があったのでリトライを入れる
-		if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null)) {
-			// select group
-			click("//*[@id=\"open\"]");
-			//dialog
-			click("//*[@id=\"node0\"]");
-			click("//*[@id=\"select\"]");
-		}
+//		if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null)) {
+//			// select group
+//			click("//*[@id=\"open\"]");
+//			//dialog
+//			click("//*[@id=\"node0\"]");
+//			click("//*[@id=\"select\"]");
+//		}
 		//input password
 		input("//*[@id=\"password\"]", "P@ssw0rd");
+		input("//*[@id=\"confirmPassword\"]","P@ssw0rd");
 	}
 
 	/**
