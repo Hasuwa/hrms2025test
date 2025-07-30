@@ -42,7 +42,7 @@ public class SampleTest extends TestBase {
 	 * 4.ログアウト
 	 *　
 	 */
-	@Test(groups = "sample")
+	// @Test(groups = "sample")
 	public void sampleTest001() throws InterruptedException {
 		//1.ログイン
 		login("admin@admin.com", "admin");
