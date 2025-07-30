@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-30T11:52:51 JST" name="sample_suite" finished-at="2025-07-30T11:52:59 JST" duration-ms="8316">
+  <suite started-at="2025-07-30T13:24:19 JST" name="Default suite" finished-at="2025-07-30T13:24:31 JST" duration-ms="12146">
     <groups>
       <group name="scenario">
-        <method signature="TsujimuraScenarioTest.scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@72967906]" name="scenarioTest001" class="scenario.TsujimuraScenarioTest"/>
+        <method signature="TsujimuraScenarioTest.scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@2f9f7dcf]" name="scenarioTest001" class="scenario.TsujimuraScenarioTest"/>
       </group> <!-- scenario -->
     </groups>
-    <test started-at="2025-07-30T11:52:51 JST" name="sample_test" finished-at="2025-07-30T11:52:59 JST" duration-ms="8316">
+    <test started-at="2025-07-30T13:24:19 JST" name="Default test" finished-at="2025-07-30T13:24:31 JST" duration-ms="12146">
       <class name="scenario.TsujimuraScenarioTest">
-        <test-method is-config="true" signature="before()[pri:0, instance:scenario.TsujimuraScenarioTest@72967906]" started-at="2025-07-30T11:52:51 JST" name="before" finished-at="2025-07-30T11:52:53 JST" duration-ms="1998" status="PASS">
+        <test-method is-config="true" signature="before()[pri:0, instance:scenario.TsujimuraScenarioTest@2f9f7dcf]" started-at="2025-07-30T13:24:19 JST" name="before" finished-at="2025-07-30T13:24:22 JST" duration-ms="3856" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method signature="scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@72967906]" started-at="2025-07-30T11:52:53 JST" name="scenarioTest001" finished-at="2025-07-30T11:52:59 JST" duration-ms="6087" status="PASS">
+        <test-method signature="scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@2f9f7dcf]" started-at="2025-07-30T13:24:22 JST" name="scenarioTest001" finished-at="2025-07-30T13:24:30 JST" duration-ms="7977" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenarioTest001 -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.TsujimuraScenarioTest@72967906]" started-at="2025-07-30T11:52:59 JST" name="after" finished-at="2025-07-30T11:52:59 JST" duration-ms="187" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.TsujimuraScenarioTest@2f9f7dcf]" started-at="2025-07-30T13:24:30 JST" name="after" finished-at="2025-07-30T13:24:31 JST" duration-ms="256" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=scenarioTest001 status=SUCCESS method=TsujimuraScenarioTest.scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@72967906] output={null}]]]>
+                <![CDATA[[TestResult name=scenarioTest001 status=SUCCESS method=TsujimuraScenarioTest.scenarioTest001()[pri:0, instance:scenario.TsujimuraScenarioTest@2f9f7dcf] output={null}]]]>
               </value>
             </param>
           </params>
@@ -30,6 +30,6 @@
           </reporter-output>
         </test-method> <!-- after -->
       </class> <!-- scenario.TsujimuraScenarioTest -->
-    </test> <!-- sample_test -->
-  </suite> <!-- sample_suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
