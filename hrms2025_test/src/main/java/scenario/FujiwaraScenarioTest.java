@@ -65,7 +65,7 @@ public class FujiwaraScenarioTest extends TestBase {
 	    //2-3-1 社員番号入力
 	    final String employeeNo = "1111";
 		//2-3-3 メールアドレス入力
-		final String mailAddress = "nnihonnnn.purota@jpd.co.jp";
+		final String mailAddress = "nnihonn.purot@jpd.co.jp";
 		inputEmployeeInfo(employeeNo, mailAddress);
 		//2-3-6 登録ボタン押下
 		click("/html/body/div[2]/form/div[1]/input");
