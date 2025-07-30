@@ -139,7 +139,7 @@ public class TestBase {
     click("//button[contains(text(), \"選択\")]");
     // dialog
     click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button");
-    click("//*[@id=\"86f4cc69-f748-44ef-a6db-6a4fc4f4b465\"]/li[3]/span");
+    click("//*[@id=\"d89e3262-d541-4ef5-95da-4fde6f00e6b4\"]/li[3]/span");
 
 
     click("/html/body/div[2]/form/div[1]/input");
