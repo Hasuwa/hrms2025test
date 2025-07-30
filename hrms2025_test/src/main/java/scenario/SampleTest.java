@@ -5,7 +5,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import utility.CommonUtil;
 
 public class SampleTest extends TestBase {
@@ -62,7 +61,7 @@ public class SampleTest extends TestBase {
 		//社員情報入力
 		final String employeeNum = "0001";
 		final String mailaddress = "Purota.NIHON@jpd.co.jp";
-		inputEmployeeInfo(employeeNum, mailaddress);
+		inputEmployeeInfo();
 		// 登録
 		click("//*[@id=\"upload\"]");
 		//メッセージバー確認

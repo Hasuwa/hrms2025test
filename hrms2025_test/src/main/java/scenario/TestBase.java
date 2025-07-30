@@ -1,9 +1,7 @@
 package scenario;
 
 import static org.testng.Assert.*;
-
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +14,7 @@ public class TestBase {
 	WebDriverWait wait;
 
 	// アプリのパス
-	static final String SHINABLE_CLOUD_PATH = "https://shinable.azurewebsites.net/login";
+	static final String SHINABLE_CLOUD_PATH = "http://localhost:8081/hrms2025/login";
 
 	/**
 	 * 入力
@@ -89,21 +87,25 @@ public class TestBase {
 	 * @param employeeNum
 	 * @param mailaddress
 	 */
-	public void inputEmployeeInfo(String employeeNum, String mailaddress) {
+	public void inputEmployeeInfo() {
 		// input employee num
-		input("//*[@id=\"number\"]", employeeNum);
+		input("//*[@id=\"employeeNo\"]","1111");
 		// input name
-		input("//*[@id=\"fullName\"]", "日本プロ太");
+		input("//*[@id=\"fullName\"]", "テストマン");
 		// input mailaddress
-		input("//*[@id=\"mailAddress\"]", mailaddress);
-		// select rank
-		click("/html/body/div[2]/div/form/div[8]/div/div/input");
-		click("//*[@class=\"dropdown-content select-dropdown\"]/li[2]");
-		// select group
-		click("//*[@id=\"open\"]");
-		// dialog
-		click("//*[@id=\"node0\"]");
-		click("//*[@id=\"select\"]");
+		input("//*[@id=\"mailAddress\"]","test@jpd.co.jp");
+		// input gender
+		click("//*[@id=\"gender1\"]");
+		//input hire date
+		
+//		 select rank
+//		click("/html/body/div[2]/div/form/div[8]/div/div/input");
+//		click("//*[@class=\"dropdown-content select-dropdown\"]/li[2]");
+//		 select group
+//		click("//*[@id=\"open\"]");
+//		 dialog
+//		click("//*[@id=\"node0\"]");
+//		click("//*[@id=\"select\"]");
 		//入力出来ていない時があったのでリトライを入れる
 		if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null)) {
 			// select group
@@ -114,6 +116,7 @@ public class TestBase {
 		}
 		//input password
 		input("//*[@id=\"password\"]", "P@ssw0rd");
+		input("//*[@id=\"confirmPassword\"]","P@ssw0rd");
 	}
 
 	/**
@@ -121,7 +124,7 @@ public class TestBase {
 	 * @param page title
 	 */
 	public void assertPageTitle(String title) {
-		waitForElementTextChange("/html/body/div[2]/h1", title);
+		waitForElementTextChange("/html/head/title", title);
 		ExpectedConditions.titleIs(title);
 	}
 
