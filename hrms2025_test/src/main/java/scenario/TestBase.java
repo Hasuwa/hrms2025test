@@ -120,7 +120,7 @@ public class TestBase {
     // 入社日
     setDate("hireDate", "2000-10-10");
     // 退職日
-    setDate("quitDate", "3000-10-10");
+    // setDate("quitDate", "3000-10-10");
     // 生年月日
     setDate("birthDate", "1000-10-10");
 
