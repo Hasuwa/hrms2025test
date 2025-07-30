@@ -133,8 +133,8 @@ public class TestBase {
     click("//*[@id=\"gender1\"]");
     // input hiredate
     inputDate("//*[@id=\"hireDate\"]", "2025-03-29");
-    // input retiredate
-    inputDate("//*[@id=\"quitDate\"]", "2055-03-31");
+    // input quitdate
+    // inputDate("//*[@id=\"quitDate\"]", "2055-03-31");
     // input birthdate
     inputDate("//*[@id=\"birthDate\"]", "2000-07-29");
     // select rank
@@ -143,9 +143,9 @@ public class TestBase {
     // select organization
     click("/html/body/div[2]/form/table/tbody/tr[9]/td/button");
     // dialog
-    click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button");
-    click("//*[@id=\"de1c657b-6ab9-412b-8137-32d0496ad58a\"]/li[3]/button");
-    click("//*[@id=\"0b9ff3de-5317-4944-9921-d77d23151ce3\"]/li/span");
+    click("/html/body/div[2]/form/div[2]/div/div/div/div[2]/div/li[3]/button");
+    click("/html/body/div[2]/form/div[2]/div/div/div/div[2]/div/li[3]/ul/li[3]/button");
+    click("/html/body/div[2]/form/div[2]/div/div/div/div[2]/div/li[3]/ul/li[3]/ul/li/span");
     // // //入力出来ていない時があったのでリトライを入れる
     // // if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null))
     // {
