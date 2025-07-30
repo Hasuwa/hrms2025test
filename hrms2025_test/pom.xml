@@ -60,7 +60,6 @@
 						<suiteXmlFile>
 							src\testng\scenario.xml
 						</suiteXmlFile>
-						<test>none</test>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
