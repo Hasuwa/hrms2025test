@@ -69,11 +69,12 @@ public class TsujimuraScenarioTest extends TestBase {
 		//2-3-2 メールアドレス入力
       final String mailaddress = "Purota.NIHON@jpd.co.jp";
       final String hireDate = "2025-04-01";
+      final String quitDate = "2026-07-29";
       final String birthDate = "2002-05-02";
       final String rank = "AS0";
       final String organizationName = "日立事業所";
 
-      inputEmployeeInfo(employeeNum, name, mailaddress, hireDate, birthDate, rank, organizationName);
+      inputEmployeeInfo(employeeNum, name, mailaddress, hireDate, quitDate, birthDate, rank, organizationName);
 
 		//2-3-6 登録ボタン押下
       click("/html/body/div[2]/form/div[1]/input");

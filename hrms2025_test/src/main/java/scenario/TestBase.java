@@ -111,7 +111,7 @@ public class TestBase {
 	 * @param hireDate 入社日（例："2025-04-01"）
 	 * @param birthDate 生年月日（例："2002-05-02"）
 	 */
-	public void inputEmployeeInfo(String employeeNum, String name, String mailaddress, String hireDate, String birthDate, String rank, String organizationName) {
+	public void inputEmployeeInfo(String employeeNum, String name, String mailaddress, String hireDate, String quitDate, String birthDate, String rank, String organizationName) {
 	    // 社員番号、氏名、メールアドレスの入力
 	    input("//*[@id=\"employeeNo\"]", employeeNum);
 	    input("//*[@id=\"fullName\"]", name);
@@ -124,6 +124,10 @@ public class TestBase {
 	    click("//*[@id=\"hireDate\"]");
 	    setDate("hireDate", hireDate);
 
+	    //退職日追加
+	    click("//*[@id=\"quitDate\"]");
+        setDate("quitDate", quitDate);
+        
 	    // 生年月日
 	    click("//*[@id=\"birthDate\"]");
 	    setDate("birthDate", birthDate);
