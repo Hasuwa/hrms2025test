@@ -87,7 +87,7 @@ public class HiragaScenarioTest extends TestBase {
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[3]/td", "cicd@jpd.co.jp");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[4]/td", "男");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[5]/td", "2022/04/01");
-    assertText("/html/body/div[2]/div[3]/table/tbody/tr[6]/td", "2025/04/01");
+    assertText("/html/body/div[2]/div[3]/table/tbody/tr[6]/td", "2025/05/04");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[7]/td", "2002/05/04");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[8]/td", "AS2");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[9]/td", "ICTソリューション事業部");
