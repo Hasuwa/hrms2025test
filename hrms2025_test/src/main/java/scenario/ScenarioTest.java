@@ -25,7 +25,7 @@ public class ScenarioTest extends TestBase {
   @BeforeMethod(alwaysRun = true)
   public void before() {
     driver = new ChromeDriver();
-    driver.get("http://localhost:81/hrms2025/login");
+    driver.get("http://localhost:8081/hrms2025/login");
     driver.manage().window().maximize();
   }
 
