@@ -91,7 +91,7 @@ public class ScenarioTest extends TestBase {
     // 2-3- 生年月日
     JavascriptExecutor js = (JavascriptExecutor) driver;
     js.executeScript("document.getElementsByName('hireDate')[0].value = '2023-04-01';");
-    js.executeScript("document.getElementsByName('quitDate')[0].value = '2025-03-31';");
+    // js.executeScript("document.getElementsByName('quitDate')[0].value = '2025-03-31';");
     js.executeScript("document.getElementsByName('birthDate')[0].value = '1990-01-01';");
     // 2-3-3 ランク選択
     WebElement dropdown = driver.findElement(By.name("employeeRank"));
