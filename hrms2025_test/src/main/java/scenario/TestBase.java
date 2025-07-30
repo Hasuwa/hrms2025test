@@ -110,6 +110,8 @@ public class TestBase {
         click("//*[@id=\"gender1\"]");
         //2-3-5 入社日選択
         setDate("hireDate", "2025-04-01");
+        //2-3-6 退社日選択
+        setDate("quitDate", "2027-03-29");
         //2-3-6 生年月日入力
         setDate("birthDate", "2002-05-02");
 		// select rank
