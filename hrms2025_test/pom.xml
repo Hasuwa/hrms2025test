@@ -58,7 +58,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>
-							src\testng\sample.xml
+							src\testng\Fujiwarascenario.xml
 						</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
