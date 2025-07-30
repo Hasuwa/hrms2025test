@@ -5,7 +5,9 @@ import static org.testng.Assert.*;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -73,9 +75,9 @@ public class TestBase {
 	 * @param password
 	 */
 	public void login(String mailAddress, String password) {
-		final String MAILADDRESS_INPUT_XPATH = "//*[@id=\"mailAddress\"]";
-		final String PASSWORD_INPUT_XPATH = "//*[@id=\"password\"]";
-		final String LOGIN_BUTTON_XPATH = "//button[text()='ログイン']";
+		final String MAILADDRESS_INPUT_XPATH = "//*[@id=\"usernameInput\"]";
+		final String PASSWORD_INPUT_XPATH = "//*[@id=\"passwordInput\"]";
+		final String LOGIN_BUTTON_XPATH = "/html/body/div[2]/div/form/div[3]/input";
 		// input mailaddress
 		input(MAILADDRESS_INPUT_XPATH, mailAddress);
 		// input password
@@ -84,36 +86,55 @@ public class TestBase {
 		click(LOGIN_BUTTON_XPATH);
 	}
 
+
+	public void setDate(String elementId, String dateValue) {
+      JavascriptExecutor js = (JavascriptExecutor) driver;
+      js.executeScript("document.getElementById('" + elementId + "').value='" + dateValue + "';");
+	}
+
+
 	/**
 	 * 社員情報を入力
 	 * @param employeeNum
 	 * @param mailaddress
+	 * @throws InterruptedException
 	 */
-	public void inputEmployeeInfo(String employeeNum, String mailaddress) {
+	public void inputEmployeeInfo(String employeeNo, String mailAddress) throws InterruptedException {
 		// input employee num
-		input("//*[@id=\"number\"]", employeeNum);
+	    input("//*[@id=\"employeeNo\"]", employeeNo);
 		// input name
 		input("//*[@id=\"fullName\"]", "日本プロ太");
 		// input mailaddress
-		input("//*[@id=\"mailAddress\"]", mailaddress);
+		input("//*[@id=\"mailAddress\"]", mailAddress);
+		//2-3-4 性別入力
+        click("//*[@id=\"gender1\"]");
+        //2-3-5 入社日選択
+        setDate("hireDate", "2025-04-01");
+        //2-3-6 生年月日入力
+        setDate("birthDate", "2002-05-02");
 		// select rank
-		click("/html/body/div[2]/div/form/div[8]/div/div/input");
-		click("//*[@class=\"dropdown-content select-dropdown\"]/li[2]");
-		// select group
-		click("//*[@id=\"open\"]");
-		// dialog
-		click("//*[@id=\"node0\"]");
-		click("//*[@id=\"select\"]");
-		//入力出来ていない時があったのでリトライを入れる
-		if (driver.findElement(By.xpath("//*[@id=\"organizationName\"]")).getText().equals(null)) {
+        click("//*[@id=\"employeeRank\"]");
+        click("//*[@id=\"employeeRank\"]/div[1]/option");
+        //2-3-8 所属入力
+        WebElement button =
+            driver.findElement(By.xpath("/html/body/div[2]/form/table/tbody/tr[9]/td/button"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+        // dialog
+        wait.until(ExpectedConditions.elementToBeClickable(
+            By.xpath("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/button")));
+        click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/span");
+        //入力出来ていない時があったのでリトライを入れる
+		if (driver.findElement(By.xpath("//*[@id=\"selectedOrganizationName\"]")).getText().equals(null)) {
 			// select group
-			click("//*[@id=\"open\"]");
+			click("/html/body/div[2]/form/table/tbody/tr[9]/td/button");
 			//dialog
-			click("//*[@id=\"node0\"]");
-			click("//*[@id=\"select\"]");
+			click("//*[@id=\"organizationModal\"]/div/div/div[2]/div/li[3]/span");
+
 		}
-		//input password
-		input("//*[@id=\"password\"]", "P@ssw0rd");
+		//2-3-9 パスワード入力
+        input("//*[@id=\"password\"]", "p@ss");
+        //2-3-10 パスワード（確認用）入力
+        input("//*[@id=\"confirmPassword\"]", "p@ss");
 	}
 
 	/**
@@ -121,8 +142,10 @@ public class TestBase {
 	 * @param page title
 	 */
 	public void assertPageTitle(String title) {
-		waitForElementTextChange("/html/body/div[2]/h1", title);
-		ExpectedConditions.titleIs(title);
+	  waitTime = Duration.ofSeconds(20);
+      wait = new WebDriverWait(driver, waitTime);
+      wait.until(ExpectedConditions.titleIs(title));
+      assertEquals(driver.getTitle(), title);
 	}
 
 	/**
@@ -130,7 +153,7 @@ public class TestBase {
 	 * @param page title
 	 */
 	public void assertPageTitleDisplayedMessageBar(String title) {
-		waitForElementTextChange("/html/body/div[2]/div[1]/h1", title);
+		waitForElementTextChange("/html/body/div[2]/div[1]/h2", title);
 		ExpectedConditions.titleIs(title);
 	}
 
@@ -139,7 +162,7 @@ public class TestBase {
 	 * @param message
 	 */
 	public void assertMessageBar(String message) {
-		waitForElementVisible("//*[@id=\"messageBar\"]");
-		assertText("//*[@id=\"messageBar\"]/span", message);
+		waitForElementVisible("/html/body/div[1]/div/div/div[3]");
+		assertText("/html/body/div[1]/div/div/div[3]/span", message);
 	}
 }
