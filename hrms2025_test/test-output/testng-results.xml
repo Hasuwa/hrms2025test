@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-30T16:25:54 JST" name="Default suite" finished-at="2025-07-30T16:26:07 JST" duration-ms="12630">
+  <suite started-at="2025-07-30T16:47:19 JST" name="Default suite" finished-at="2025-07-30T16:49:04 JST" duration-ms="104711">
     <groups>
       <group name="scenario">
         <method signature="HirayamaScenarioTest.scenarioTest001()[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" name="scenarioTest001" class="scenario.HirayamaScenarioTest"/>
       </group> <!-- scenario -->
     </groups>
-    <test started-at="2025-07-30T16:25:54 JST" name="Default test" finished-at="2025-07-30T16:26:07 JST" duration-ms="12630">
+    <test started-at="2025-07-30T16:47:19 JST" name="Default test" finished-at="2025-07-30T16:49:04 JST" duration-ms="104711">
       <class name="scenario.HirayamaScenarioTest">
-        <test-method is-config="true" signature="before()[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:25:54 JST" name="before" finished-at="2025-07-30T16:25:58 JST" duration-ms="3845" status="PASS">
+        <test-method is-config="true" signature="before()[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:47:19 JST" name="before" finished-at="2025-07-30T16:47:27 JST" duration-ms="7692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method signature="scenarioTest001()[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:25:58 JST" name="scenarioTest001" finished-at="2025-07-30T16:26:06 JST" duration-ms="8467" status="PASS">
+        <test-method signature="scenarioTest001()[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:47:27 JST" name="scenarioTest001" finished-at="2025-07-30T16:48:33 JST" duration-ms="65895" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenarioTest001 -->
-        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:26:06 JST" name="after" finished-at="2025-07-30T16:26:07 JST" duration-ms="261" status="PASS">
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.HirayamaScenarioTest@5b8dfcc1]" started-at="2025-07-30T16:48:33 JST" name="after" finished-at="2025-07-30T16:49:04 JST" duration-ms="31069" status="PASS">
           <params>
             <param index="0">
               <value>

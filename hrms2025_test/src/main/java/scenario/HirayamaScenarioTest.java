@@ -93,6 +93,9 @@ public class HirayamaScenarioTest extends TestBase {
 		//入社日入力
 		waitForElementVisible("//*[@id=\"hireDate\"]");
 		driver.findElement(By.xpath("//*[@id=\"hireDate\"]")).sendKeys("002020-04-01");
+		//退職日入力
+		waitForElementVisible("//*[@id=\"quitDate\"]");
+        driver.findElement(By.xpath("//*[@id=\"quitDate\"]")).sendKeys("002020-04-01");
 		//生年月日入力
 		waitForElementVisible("//*[@id=\"birthDate\"]");
 		driver.findElement(By.xpath("//*[@id=\"birthDate\"]")).sendKeys("002000-04-01");
@@ -111,12 +114,12 @@ public class HirayamaScenarioTest extends TestBase {
         // 所属選択ボタンをクリック
         WebElement selectButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.btn-select")));
         
-        System.out.println("表示されているか: " + selectButton.isDisplayed());
-        System.out.println("有効か: " + selectButton.isEnabled());
-        System.out.println("タグ名: " + selectButton.getTagName());
-        System.out.println("クラス属性: " + selectButton.getAttribute("class"));
-        System.out.println("data-bs-toggle: " + selectButton.getAttribute("data-bs-toggle"));
-        System.out.println("data-bs-target: " + selectButton.getAttribute("data-bs-target"));
+//        System.out.println("表示されているか: " + selectButton.isDisplayed());
+//        System.out.println("有効か: " + selectButton.isEnabled());
+//        System.out.println("タグ名: " + selectButton.getTagName());
+//        System.out.println("クラス属性: " + selectButton.getAttribute("class"));
+//        System.out.println("data-bs-toggle: " + selectButton.getAttribute("data-bs-toggle"));
+//        System.out.println("data-bs-target: " + selectButton.getAttribute("data-bs-target"));
         
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", selectButton);
