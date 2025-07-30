@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="sample_suite" parallel="Methods" thread-count="1">
-	<test name="sample_test">
+<suite name="scenario_suite" parallel="Methods" thread-count="1">
+	<test name="scenario_test">
 		<groups>
 			<run>
 				<include name="scenario" />
