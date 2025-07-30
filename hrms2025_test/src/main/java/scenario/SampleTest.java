@@ -60,9 +60,17 @@ public class SampleTest extends TestBase {
 		assertPageTitle("従業員情報登録");
 		
 		//社員情報入力
-		final String employeeNum = "0001";
-		final String mailaddress = "Purota.NIHON@jpd.co.jp";
-		inputEmployeeInfo(employeeNum, mailaddress);
+		//必須項目入力
+	      final String employeeNum = "0001";
+	        //2-3-1 氏名入力
+	      final String name = "日本プロ太";
+	        //2-3-2 メールアドレス入力
+	      final String mailaddress = "Purota.NIHON@jpd.co.jp";
+	      final String hireDate = "2025-04-01";
+	      final String birthDate = "2002-05-02";
+	      final String rank = "AS0";
+	      final String organizationName = "日立事業所";
+	      inputEmployeeInfo(employeeNum, name, mailaddress, hireDate, birthDate, rank, organizationName);
 		// 登録
 		click("//*[@id=\"upload\"]");
 		//メッセージバー確認
