@@ -40,9 +40,10 @@ public class SampleTest extends TestBase {
 	 * 2.必須項目情報のみで社員登録
 	 * 3.登録した社員を削除
 	 * 4.ログアウト
+	 *　
 	 */
 	@Test(groups = "sample")
-	public void sampleTest001() {
+	public void sampleTest001() throws InterruptedException {
 		//1.ログイン
 		login("admin@admin.com", "admin");
 		// ホーム画面が開く
@@ -58,7 +59,7 @@ public class SampleTest extends TestBase {
 		click("//*[text()='新規登録']");
 		// ページ確認
 		assertPageTitle("従業員情報登録");
-		
+
 		//社員情報入力
 		final String employeeNum = "0001";
 		final String mailaddress = "Purota.NIHON@jpd.co.jp";
