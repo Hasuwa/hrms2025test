@@ -7,8 +7,5 @@
 				<include name="scenario" />
 			</run>
 		</groups>
-		<classes>
-			<class name="scenario.FujiwaraScenarioTest" />
-		</classes>
 	</test>
 </suite>
