@@ -127,6 +127,8 @@ public class TestBase {
     input("//*[@id=\"hireDate\"]", "0020220401");
     // 生年月日
     input("//*[@id=\"birthDate\"]", "0020020504");
+    // 退職日(追加)
+    input("//*[@id=\"quitDate\"]", "0020250504");
     // select rank
     click("//*[@id=\"employeeRank\"]/div[3]/option");
     // click("//*[@class=\"dropdown-content select-dropdown\"]/li[2]");
