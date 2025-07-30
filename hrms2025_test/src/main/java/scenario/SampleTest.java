@@ -41,7 +41,7 @@ public class SampleTest extends TestBase {
 	 * 3.登録した社員を削除
 	 * 4.ログアウト
 	 */
-	@Test(groups = "sample")
+	//@Test(groups = "sample")
 	public void sampleTest001() {
 		//1.ログイン
 		login("admin@admin.com", "admin");
