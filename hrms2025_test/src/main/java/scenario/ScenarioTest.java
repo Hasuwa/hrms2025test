@@ -13,6 +13,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utility.CommonUtil;
 
 // @Test
@@ -46,6 +47,7 @@ public class ScenarioTest extends TestBase {
   /**
    * 1.ログイン 2.必須項目情報のみで社員登録 3.登録した社員を削除 4.ログアウト
    */
+  @Test(groups = "scenario")
   public void scenarioTest001() {
     // 1.ログイン
     // 1-1 メールアドレス入力

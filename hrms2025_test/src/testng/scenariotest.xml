@@ -4,11 +4,11 @@
 	<test name="sample_test">
 		<groups>
 			<run>
-				<include name="sample" />
+				<include name="scenario" />
 			</run>
 		</groups>
 		<classes>
-			<class name="scenario.SampleTest" />
+			<class name="scenario.ScenarioTest" />
 		</classes>
 	</test>
 </suite>
