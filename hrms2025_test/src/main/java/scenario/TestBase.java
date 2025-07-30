@@ -133,6 +133,8 @@ public class TestBase {
     click("//*[@id=\"gender1\"]");
     // input hiredate
     inputDate("//*[@id=\"hireDate\"]", "2025-03-29");
+    // input retiredate
+    inputDate("//*[@id=\"quitDate\"]", "2055-03-31");
     // input birthdate
     inputDate("//*[@id=\"birthDate\"]", "2000-07-29");
     // select rank
