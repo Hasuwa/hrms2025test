@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="sample_suite" parallel="Methods" thread-count="1">
 	<test name="scenario_test">
-		<groups>
-			<run>
-				<include name="scenario" />
-			</run>
-		</groups>
+<!--		<groups>-->
+<!--			<run>-->
+<!--				<include name="scenario" />-->
+<!--			</run>-->
+<!--		</groups>-->
 		<classes>
 			<class name="scenario.InoueScenarioTest" />
 		</classes>
