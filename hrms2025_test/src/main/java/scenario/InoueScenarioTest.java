@@ -81,7 +81,7 @@ public class InoueScenarioTest extends TestBase {
     // 入力された内容が表示されることを確認
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[1]/td", "1111");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[2]/td", "日本プロ太");
-    assertText("/html/body/div[2]/div[3]/table/tbody/tr[3]/td", "test.jpd.co.jp");
+    assertText("/html/body/div[2]/div[3]/table/tbody/tr[3]/td", "test@jpd.co.jp");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[4]/td", "男");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[5]/td", "2000/10/10");
     assertText("/html/body/div[2]/div[3]/table/tbody/tr[6]/td", "3000/10/10");
