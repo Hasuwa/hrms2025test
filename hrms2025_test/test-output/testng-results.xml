@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-30T09:32:24 JST" name="sample_suite" finished-at="2025-07-30T09:33:29 JST" duration-ms="65365">
+    <groups>
+      <group name="scenario">
+        <method signature="FujiwaraScenarioTest.scenarioTest001()[pri:0, instance:scenario.FujiwaraScenarioTest@55183b20]" name="scenarioTest001" class="scenario.FujiwaraScenarioTest"/>
+      </group> <!-- scenario -->
+    </groups>
+    <test started-at="2025-07-30T09:32:24 JST" name="sample_test" finished-at="2025-07-30T09:33:29 JST" duration-ms="65365">
+      <class name="scenario.FujiwaraScenarioTest">
+        <test-method is-config="true" signature="before()[pri:0, instance:scenario.FujiwaraScenarioTest@55183b20]" started-at="2025-07-30T09:32:24 JST" name="before" finished-at="2025-07-30T09:32:45 JST" duration-ms="20987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method signature="scenarioTest001()[pri:0, instance:scenario.FujiwaraScenarioTest@55183b20]" started-at="2025-07-30T09:32:45 JST" name="scenarioTest001" finished-at="2025-07-30T09:33:26 JST" duration-ms="41467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTest001 -->
+        <test-method is-config="true" signature="after(org.testng.ITestResult)[pri:0, instance:scenario.FujiwaraScenarioTest@55183b20]" started-at="2025-07-30T09:33:26 JST" name="after" finished-at="2025-07-30T09:33:29 JST" duration-ms="2843" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=scenarioTest001 status=SUCCESS method=FujiwaraScenarioTest.scenarioTest001()[pri:0, instance:scenario.FujiwaraScenarioTest@55183b20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+      </class> <!-- scenario.FujiwaraScenarioTest -->
+    </test> <!-- sample_test -->
+  </suite> <!-- sample_suite -->
+</testng-results>
